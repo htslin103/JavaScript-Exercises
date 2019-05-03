@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head> 
+ <script>
+ function textChanging(){
+ document.getElementById("fxntxtchng").innerHTML="Change Complete.";
+ }
+ </script>
+</head>
+<body>
+
+
+<h1> The place where I just keep adding things until it looks ugly</h1>
+
+<h4> A button that shows the date</h4>
+<button type="button" onclick="document.getElementById('datetimebutton').innerHTML = Date()"> 
+	This magical button will tell you the moment of your death
+</button>
+
+<p id = "datetimebutton"> </p>
+
+
+<h4> A button that changes html </h4>
+<p id="htmlchange"> Don't click</p>
+<button type="button" onclick='document.getElementById("htmlchange").innerHTML = "No, we dont like it"'> Click it</button>
+
+<h4> Change the html attributes, here the button changes the source</h4>
+<button onclick="document.getElementById('theChangingImage').src='apple.jpg'">You are so a-peel-ing</button>
+<img id="theChangingImage" src="apple.jpg" style="width:100px">
+
+<button onclick="document.getElementById('theChangingImage').src='owl.png'">You'll always be a hoot to me</button>
+
+<h4> Lets change the HTML style</h4>
+<p id="HTMLStyle"> Here is some boring text</p>
+<button type = "button" onclick="document.getElementById('HTMLStyle').style.fontSize='50px'">Prepare to be wowed.</button>
+
+<h4>We can hide html elements</h4>
+<p id="hide"> Now you see me</p>
+<button type="button" onclick="document.getElementById('hide').style.display='none'">Now you don't</button>
+<h4>Or reveal elements</h4>
+<p id="reveal" style="display:none"> Shh I'm hiding</p>
+<button type="button" onclick="document.getElementById('reveal').style.display='block'"> Poke the tiger</button>
+
+<h4> we can put JS in the head or the body</h4>
+<p id="fxntxtchng"> Before Change</p>
+<button type="button" onclick="textChanging()"> Function in the head</button>
+
+<button type="button" onclick="fxninside()"> The same but the fnx is in the body</button>
+<script>
+function fxninside(){
+document.getElementById("fxntxtchng").innerHTML = "Another!";
+}
+</script>
+
+<h4> Keep it clean and put the script in an external document.js</h4>
+<p id="outsidefxn"> Will I work?</p>
+<button type="button" onclick="outsideFunction()"> Let's give it a try</button>
+<script src="myScript.js"></script>
+
+<h4> This script runs when page loads, otherwise document.write erases the whole page</h4>
+<script>
+document.write("Whasssup");
+</script>
+
+<h4> we can manipulate the paragraph using their id</h4>
+<p id="chngPByScript"></p>
+<script> 
+document.getElementById("chngPByScript").innerHTML = "Already done before you know it" 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
