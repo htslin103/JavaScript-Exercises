@@ -50,12 +50,19 @@
 function fxninside(){
 document.getElementById("fxntxtchng").innerHTML = "Another!";
 }
-</script>
+
 
 <h4> Keep it clean and put the script in an external document.js</h4>
 <p id="outsidefxn"> Will I work?</p>
 <button type="button" onclick="outsideFunction()"> Let's give it a try</button>
-<script src="myScript.js"></script>
+<script src="myScript.js">>
+
+<h4> Write it in an external folder</h4>
+<p id= "outsidefolder"> A paragraph. </p>
+<button type="button" onclick="outsideFolderFunction()"> Do it now! </button>
+<script src="/Externalfolder/myScript.js"></script>
+
+
 
 <h4> This script runs when page loads, otherwise document.write erases the whole page</h4>
 <script>
@@ -67,6 +74,293 @@ document.write("Whasssup");
 <script> 
 document.getElementById("chngPByScript").innerHTML = "Already done before you know it" 
 </script>
+
+<h4>Window popup</h4>
+<!--Disabled cause it's annoying
+<script>
+window.alert("Hello there");
+</script>
+-->
+
+<h4> write into the console, then show with f12 and selecting the console tab</h4>
+<script>
+console.log("Yolo");
+</script>
+
+<h4> JS statements</h4>
+<p id="sum"></p>
+<script>
+var x, y, z; //delcaring three variables
+x = 5;
+y = 6;
+z = x + y;
+document.getElementById("sum").innerHTML=
+"The value of z is " + z + ".";
+
+</script> 
+
+
+<h4> JS statements are executed by the browser. </h4> 
+
+<p id="browserscript"></p>
+<script>
+document.getElementById("browserscript").innerHTML = "Hello there.";
+</script>
+
+<h4> you can write js in code blocks between {} </h4>
+
+<p id="codeBlock1"></p>
+<p id="codeBlock2"></p>
+<script>
+function codeBlock(){
+	document.getElementById("codeBlock1").innerHTML = "Hello there."; 
+	document.getElementById("codeBlock2").innerHTML = "We meet again."; 
+}
+</script>
+<h4> The best place to break a code line is after an operator or a comma </h4>
+<p> document.getElementById("demo").innerHTML
+=
+"Hello there";
+</p>
+<p> single line comments //</p>
+<script>
+//hello
+</script>
+<p> multi-line comments /* */</p>
+<script>
+
+/* big hello 
+*
+*
+*/
+</script>
+
+<p> a variable without a value will have the value undefined </p>
+<p> re-declaring a variable will not cause it to lose its value 
+</br> ex. var carName = "Volvo"; 
+var carName; 
+
+<p id = "demo"></p>
+document.getElementById("demo").innerHTML = carName; will result in Volvo 
+
+</p> 
+<h4> Arrays start at 0 </h4>
+<p> 
+&lt;p&gt; id = "demo" &lt;/p&gt;</br>
+&lt;script&gt;
+<br/>var cars = ["Saab","Volvo","BMW"]; 
+document.getElementById("demo").innerHTML = cars[0]; 
+</br> the answer would be Saab </br>
+&lt;/script&gt;
+</p>
+
+<h4> JS objects </h4> 
+
+<p id="obj"></p> 
+<script> 
+var person = {
+	firstName: "John", 
+	lastname: "Doe", 
+	age: 50,
+	eyeColor: "blue" 
+	}; 
+	
+	document.getElementById("obj").innerHTML = person. firstName + " is " + person.age + " years old."; 
+</script> 
+
+<h4> use typeof to find out its type </h4> 
+<p id = "urType"></p> 
+<script> 
+document.getElementById("urType").innerHTML = 
+typeof "" + "<br>" + 
+typeof "John" + "<br>" + 
+typeof 0 + "<br>"; 
+</script> 
+
+<h4> adding two numbers and a string vs string and two numbers </h4> 
+adding two numbers and a string 
+
+<p id="2ns"></p>
+
+<script>
+var x = 16 + 4 + "Volvo";
+document.getElementById("2ns").innerHTML = x;
+</script>
+
+<p> adding a string and two numbers makes it all a string </p> 
+<p id="s2n"></p>
+
+<script>
+var x = "Volvo" + 16 + 4;
+document.getElementById("s2n").innerHTML = x;
+</script>
+
+<h4> the value and datatype of a variable with no value is undefined </h4> 
+
+
+<p id="undef"></p>
+
+<script>
+var secret;
+document.getElementById("undef").innerHTML =
+secret + "<br>" + typeof secret;
+</script>
+
+<h4> an empty string has both a legal value and a type </h4> 
+
+<p id="empty"></p>
+
+<script>
+var emptyS = "";
+document.getElementById("empty").innerHTML =
+" This is the variable" + emptyS + " ." + "<br>" + " and its type is " + typeof emptyS;
+</script>
+
+<h4> you can use person.property or person["property"] </h4> 
+
+<h4> An object method is a function def, stored as a property value</h4> 
+
+
+
+<p id = "objmeth"></p>
+<script>
+
+
+// Create an object:
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+// Display data from the object:
+document.getElementById("objmeth").innerHTML = person.fullName();
+</script>
+
+<h4> Accessing the object method without () will return the function definition </h4> 
+<p> function() { return this.firstName + " " + this.lastName; } </p>
+
+<h4> a function with an argument </h4> 
+<p id="Welcome"></p>
+<button onclick="WelcomeMsg('Harry Potter','Wizard')"> Try it </button> 
+
+<script> 
+function WelcomeMsg(name,job) {
+ document.getElementById("Welcome").innerHTML = "Welcome " + name + ", the " + job + ".";
+ }
+ </script> 
+
+<h4> Two different functions can be called </h4> 
+<script> 
+function MorningOrEveningfunction(txt) { document.getElementById("2fxn").innerHTML = txt } <!--this function receives the text from the button and changes the html-->
+</script> 
+
+<p> when you click one of the buttons the fxn will be called. The fxn will display the argument that is passed to it </p>
+<form> 
+	<input type = "button" onclick="MorningOrEveningfunction('Good Morning!')" value = "If it's morning"> <!--value is the text on the button--> 
+	<input type = "button" onclick="MorningOrEveningfunction('Good Evening!')" value = "If it's evening"> <!--onclick calls the function while inserting the parameter-->
+</form> 
+
+<p id="2fxn"></p>
+
+<h4> Functions that return values </h4> 
+<p id="calc"></p> 
+
+
+
+ <!--Creates a variable and sets it to the function with given params
+ assigns html to var x -->
+
+<script>
+var x = myCalc(4, 3);
+document.getElementById("calc").innerHTML = x;
+
+function myCalc(a, b) {
+  return a * b;
+}
+</script>
+
+<h4> conversions like Fahrenheit to Celsius: </h4> 
+<p id="FtoC"></p>
+
+<script> 
+function toCelsius(f){
+	return (5/9)*(f-32);
+}
+document.getElementById("FtoC").innerHTML = toCelsius(100); //setting the HTML after calling the fxn with the input parameter 
+</script> 
+
+<h4> Without the () you can look at the function definition </h4>
+
+<p id="formula"></p> 
+<script> 
+function theFormula(f){
+	return (5/9)*(f-32);
+}
+document.getElementById("formula").innerHTML = theFormula; 
+</script> 
+
+
+<h4> an example of an onclick event that changes itself </h4> 
+<button onclick="this.innerHTML=Date()"> The time is? </button> 
+
+<h4> using an onclick to display a function </h4> 
+<button onclick="displayDate()"> The time is? </button> 
+
+<script> 
+function displayDate(){
+	document.getElementById("display").innerHTML = Date(); 
+	}
+</script> 
+<p id = "display"></p> 
+
+<h4> Working with backslash so that we can show quotes </h4> 
+
+<p id = "Vikings"></p> <!-- must be before script as it will execute and needs id reference--> 
+<script> 
+var x = 'It\'s alright'; 
+var y = "We are the so-called \"Vikings\" from the north."; <!-- escape comes before-->
+document.getElementById("Vikings").innerHTML = x + "<br>" + y; 
+</script> 
+
+<h4> find the length of a string </h4>
+<p id="length"></p> 
+<script> 
+document.getElementById("length").innerHTML = y.length; <!--still works even when in other script tag--> 
+</script> 
+
+
+<h4> break a text string with a backslash </h4> 
+<p id="break"></p>
+<script>
+document.getElementById("break").innerHTML = "Hello \Dolly!"; 
+</script> 
+
+<h4> but you can't break a code line with a \ backslash </h4> 
+<p id="nobreak"></p>
+<script>
+document.getElementById("nobreak").innerHTML = \ "Hello Dolly!"; 
+</script> 
+
+<h4> IndexOf() finds the position of the first occurence of a specified test </h4> 
+<p id="index"></p>
+<script> 
+var str = "Please locate where 'locate' occurs!"; <!-- the string we are investigating-->
+var pos = str.indexOf("locate"); <!-- where we want to display our answer--> 
+document.getElementById("index").innerHTML = pos; 
+</script> 
+
+
+
+
+
+
+
+
+
+
 
 
 
